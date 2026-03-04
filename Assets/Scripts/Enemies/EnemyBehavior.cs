@@ -28,7 +28,6 @@ public class EnemyBehavior : MonoBehaviour
         if (distance <= 1.5f)
         {
             agent.ResetPath();
-            Attack();
         }
         else
         {
@@ -41,8 +40,4 @@ public class EnemyBehavior : MonoBehaviour
         agent.SetDestination(player.position);
     }
 
-    public override void Attack()
-    {
-
-    }
 }

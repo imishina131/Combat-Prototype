@@ -14,7 +14,7 @@ public class Enemy01 : EnemyBehavior
         
     }
 
-    public override void Attack()
+    public void Attack()
     {
 
     }
