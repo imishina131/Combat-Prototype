@@ -20,14 +20,14 @@ public class EnemyBehavior : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         distance = Vector3.Distance(transform.position, player.position);
-        Debug.Log(distance);
 
         if (distance <= 1.5f)
         {
             agent.ResetPath();
+            Attack();
         }
         else
         {
@@ -38,6 +38,11 @@ public class EnemyBehavior : MonoBehaviour
     void ChasePlayer()
     {
         agent.SetDestination(player.position);
+    }
+
+    public virtual void Attack()
+    {
+        Debug.Log("basic");
     }
 
 }

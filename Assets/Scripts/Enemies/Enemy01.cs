@@ -5,17 +5,18 @@ public class Enemy01 : EnemyBehavior
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        base.Update();
     }
 
-    public void Attack()
+    public override void Attack()
     {
-
+        Debug.Log("01");
+        //attack sequence
     }
 }
