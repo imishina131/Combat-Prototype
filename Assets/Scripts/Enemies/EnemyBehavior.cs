@@ -8,16 +8,16 @@ public class EnemyBehavior : MonoBehaviour
     public Transform player;
 
     private float distance;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
     void Start()
     {
         ChasePlayer();
     }
 
-    void Awake()
-    {
-        agent = GetComponent<NavMeshAgent>();
-    }
 
     // Update is called once per frame
     public void Update()
@@ -31,7 +31,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-            agent.SetDestination(player.position);
+            ChasePlayer();
         }
     }
 
