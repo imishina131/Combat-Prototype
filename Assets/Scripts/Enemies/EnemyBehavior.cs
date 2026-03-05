@@ -31,7 +31,7 @@ public class EnemyBehavior : MonoBehaviour
         }
         else
         {
-            agent.SetDestination(player.position);
+            ChasePlayer();
         }
     }
 
