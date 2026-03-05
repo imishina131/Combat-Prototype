@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class movement : MonoBehaviour
 {
+    HealthBarScript healthBarScript;
     private float playerSpeed = 5.0f;
     private float jumpHeight = 1.5f;
     private float gravityValue = -9.81f;
@@ -10,7 +11,7 @@ public class movement : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-
+    private Animator animator;
     [Header("Input Actions")]
     public InputActionReference moveAction; // expects Vector2
     public InputActionReference jumpAction; // expects Button
@@ -18,6 +19,7 @@ public class movement : MonoBehaviour
     private void Awake()
     {
         controller = gameObject.GetComponent<CharacterController>();
+        animator = GetComponent<Animator>();
     }
 
     private void OnEnable()
@@ -34,11 +36,16 @@ public class movement : MonoBehaviour
 
     void Update()
     {
+        /*
+        if (healthBarScript._currentHP <= 0)
+        {
+            animator.SetBool("Death" , true);
+        }
+        */
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y <= 1.05f)
         {
             playerVelocity.y = 0.1f;
-            Debug.Log("you jump");
         }
 
         // Read input
@@ -54,12 +61,14 @@ public class movement : MonoBehaviour
         if (move == Vector3.zero)
         {
             //still animations
+            //animator.SetBool("Jump", false);
         }
 
         // Jump
         if (jumpAction.action.triggered && groundedPlayer)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
+            animator.SetBool("Jump", true);
         }
 
         // Apply gravity

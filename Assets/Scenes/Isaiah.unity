@@ -527,6 +527,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e1b0070952bf9cc4ca757b0a701a5d0c, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2253,6 +2257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ac4dfced14d31a4cb70d457487da586, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarScript
+  _MaxHP: 100
+  _currentHP: 0
   _healthBarFill: {fileID: 221860716}
   _HpText: {fileID: 1871974818}
   _colored:

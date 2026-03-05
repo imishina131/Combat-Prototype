@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class HealthBarScript : MonoBehaviour
 {
-    private float _MaxHP = 100;
-    private float _currentHP;
+    public float _MaxHP = 100;
+    public float _currentHP;
     [SerializeField] private Image _healthBarFill;
     [SerializeField] private TextMeshProUGUI _HpText;
     //[SerializeField] private float _fillSpeed;
