@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class movement : MonoBehaviour
 {
@@ -69,6 +70,18 @@ public class movement : MonoBehaviour
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
             animator.SetBool("Jump", true);
+            
+        }
+        //Jump kick
+        if (groundedPlayer != true && Input.GetKeyDown(KeyCode.Z))
+        {
+            Debug.Log("player has jump Kick");
+            animator.SetBool("Jump Kick", true);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Debug.Log("player has hook punch");
+            animator.SetBool("hook punch", true);
         }
 
         // Apply gravity
