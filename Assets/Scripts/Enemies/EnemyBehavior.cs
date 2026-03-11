@@ -27,9 +27,9 @@ public class EnemyBehavior : MonoBehaviour
             agent.ResetPath();
             TryAttack();
         }
-        else
+        else if(gameObject.CompareTag)
         {
-            ChasePlayer();
+            //ChasePlayer();
         }
     }
 

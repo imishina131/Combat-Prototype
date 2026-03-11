@@ -1,22 +1,16 @@
 using UnityEngine;
 
-public class Enemy01 : EnemyBehavior
+public class BatEnemy : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
-    //void Update()
-   // {
-        //base.Update();
-    //}
-
-    public override void Attack()
+    void Update()
     {
-        Debug.Log("01");
-        //attack sequence
+        
     }
 }
