@@ -9,10 +9,10 @@ public class Enemy01 : EnemyBehavior
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        base.Update();
-    }
+    //void Update()
+   // {
+        //base.Update();
+    //}
 
     public override void Attack()
     {
