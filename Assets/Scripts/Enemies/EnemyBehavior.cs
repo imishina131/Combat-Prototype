@@ -12,10 +12,14 @@ public class EnemyBehavior : MonoBehaviour
 
     protected float lastAttackTime;
 
+    protected Animator animator;
+
     protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+
+        animator = GetComponent<Animator>();
     }
 
     protected virtual void Update()

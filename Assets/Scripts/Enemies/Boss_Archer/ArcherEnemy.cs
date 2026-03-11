@@ -6,6 +6,8 @@ public class ArcherEnemy : EnemyBehavior
     public GameObject arrowPrefab;
     public Transform firePoint;
 
+    Enemy enemy;
+
     public float teleportRadius = 8f;
     public float archerAttackRange = 15f;
     public float safeDistance = 4f;
@@ -13,8 +15,17 @@ public class ArcherEnemy : EnemyBehavior
 
     private float closeTimer = 0f;
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        enemy = GetComponent<Enemy>();
+    }
+
     protected override void Update()
     {
+        if (enemy.isDead) return;
+
         float distance = Vector3.Distance(transform.position, player.position);
 
         agent.ResetPath();

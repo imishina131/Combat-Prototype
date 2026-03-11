@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.998852
+      value: -10.689906
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00000009755149
+      value: 0.00000039785402
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.577043
+      value: -7.470051
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       propertyPath: m_LocalRotation.w
@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt_Fast
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e2a5a837f175e0e4a9abc6d51ce27ac2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -133,6 +137,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   maxHealth: 5
   currentHealth: 0
+  isDead: 0
 --- !u!114 &1391292830035180095
 MonoBehaviour:
   m_ObjectHideFlags: 0

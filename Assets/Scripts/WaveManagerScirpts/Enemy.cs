@@ -9,6 +9,14 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
 
+    private Animator animator;
+    public bool isDead = false;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     private void Start()
     {
         currentHealth = maxHealth;
@@ -16,6 +24,8 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         currentHealth -= damage;
 
         if (currentHealth <= 0)
@@ -26,7 +36,11 @@ public class Enemy : MonoBehaviour
 
     public void Kill()
     {
+        isDead = true;
+
+        animator.SetTrigger("enemyDeath");
+
         OnEnemyKilled?.Invoke(this);
-        Destroy(gameObject);
+        Destroy(gameObject, 5f);
     }
 }

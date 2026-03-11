@@ -15,6 +15,7 @@ public class Grunt_Tank : EnemyBehavior
 
     public override void Attack()
     {
+        animator.SetTrigger("attackHeadbutt");
         Debug.Log("Tank hits player");
     }
 }

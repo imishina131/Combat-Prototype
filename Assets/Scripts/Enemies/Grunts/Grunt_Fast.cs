@@ -15,6 +15,7 @@ public class Grunt_Fast : EnemyBehavior
 
     public override void Attack()
     {
+        animator.SetTrigger("attackPunch");
         Debug.Log("Fast Enemy Hit Player");
     }
 }
