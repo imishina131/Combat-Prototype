@@ -3,46 +3,47 @@ using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
-    public NavMeshAgent agent;
+    // protected keeps it private but lets children access it
+    protected NavMeshAgent agent;
+    protected Transform player;
 
-    public Transform player;
+    public float attackRange = 2f;
+    public float attackCooldown = 1.5f;
 
-    private float distance;
-    void Awake()
+    protected float lastAttackTime;
+
+    protected virtual void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        player = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
-    void Start()
+    protected virtual void Update()
     {
-        ChasePlayer();
-    }
+        float distance = Vector3.Distance(transform.position, player.position);
 
-
-    // Update is called once per frame
-    public void Update()
-    {
-        distance = Vector3.Distance(transform.position, player.position);
-
-        if (distance <= 1.5f)
+        if (distance <= attackRange)
         {
             agent.ResetPath();
-            Attack();
+            TryAttack();
         }
         else
         {
-            ChasePlayer();
+            agent.SetDestination(player.position);
         }
     }
 
-    void ChasePlayer()
+    protected virtual void TryAttack()
     {
-        agent.SetDestination(player.position);
+        if (Time.time >= lastAttackTime + attackCooldown)
+        {
+            Attack();
+            lastAttackTime = Time.time;
+        }
     }
 
     public virtual void Attack()
     {
-        Debug.Log("basic");
+        Debug.Log("Enemy Attack");
     }
-
 }
