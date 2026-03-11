@@ -1,60 +1,29 @@
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.UIElements;
 
-public class movement : MonoBehaviour
+public class combos : MonoBehaviour
 {
-    HealthBarScript healthBarScript;
-    private float playerSpeed = 5.0f;
-    private float jumpHeight = 1.5f;
-    private float gravityValue = -9.81f;
-
-    private CharacterController controller;
-    private Vector3 playerVelocity;
-    private bool groundedPlayer;
-
     private Animator animator;
-    /*
     //combo1
-    public float coolDownTime = 1f;
+    public float coolDownTime = 2f;
     private float nextFireTime = 0f;
     public static int combo1 = 0;
-     float lastClickTime = 0;
-     float maxComboDelay = 2;
+    float lastClickTime = 0;
+    float maxComboDelay = 2;
 
     //Combo 2 or C2
     public static int combo2 = 0;
-     float lastClickTimeC2 = 0;
-     float maxComboDelayC2 = 2;
+    float lastClickTimeC2 = 0;
+    float maxComboDelayC2 = 2;
     private float nextFireTime2 = 0f;
-    */
-
-    [Header("Input Actions")]
-    public InputActionReference moveAction; // expects Vector2
-    public InputActionReference jumpAction; // expects Button
-
-    private void Awake()
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        controller = gameObject.GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
-    {
-        moveAction.action.Enable();
-        jumpAction.action.Enable();
-    }
-
-    private void OnDisable()
-    {
-        moveAction.action.Disable();
-        jumpAction.action.Disable();
-    }
-
+    // Update is called once per frame
     void Update()
     {
-        /*
         //stops animation for combo 1
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.7f && animator.GetCurrentAnimatorStateInfo(0).IsName("hook punch"))
         {
@@ -107,61 +76,10 @@ public class movement : MonoBehaviour
             }
         }
         //stops animation for combo 2
-        */
-        //
-        /*
-        if (healthBarScript._currentHP <= 0)
-        {
-            animator.SetBool("Death" , true);
-        }
-        */
-        groundedPlayer = controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y <= 1.05f)
-        {
-            playerVelocity.y = 0.1f;
-        }
-
-        // Read input
-        Vector2 input = moveAction.action.ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
-        move = Vector3.ClampMagnitude(move, 1f);
-
-        if (move != Vector3.zero)
-        {
-            transform.forward = move;
-        }
-
-        if (move == Vector3.zero)
-        {
-            //still animations
-            //animator.SetBool("Jump", false);
-        }
-
-        // Jump
-        if (jumpAction.action.triggered && groundedPlayer)
-        {
-            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
-            animator.SetBool("Jump", true);
-            
-        }
-        //Jump kick (combo 3)
-        if (groundedPlayer != true && Input.GetKeyDown(KeyCode.Z))
-        {
-            Debug.Log("player has jump Kick");
-            animator.SetBool("Jump Kick", true);
-        }
-
-        // Apply gravity
-        playerVelocity.y += gravityValue * Time.deltaTime;
-
-        // Combine horizontal and vertical movement
-        Vector3 finalMove = (move * playerSpeed) + (playerVelocity.y * Vector3.up);
-        controller.Move(finalMove * Time.deltaTime);
     }
 
-    /*
     //for combo1
-     void OnClick()
+    void OnClick()
     {
         lastClickTime = Time.time;
         combo1++;
@@ -185,7 +103,7 @@ public class movement : MonoBehaviour
         }
     }
     //for combo2
-     void OnClick2()
+    void OnClick2()
     {
         lastClickTimeC2 = Time.time;
         combo2++;
@@ -208,6 +126,4 @@ public class movement : MonoBehaviour
             Debug.Log("C2 HighKick");
         }
     }
-    */
-    
 }
