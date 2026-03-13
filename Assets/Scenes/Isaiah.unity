@@ -1539,7 +1539,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54068336ebba5c0449b6b6e4c6c0cb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::combos
-  coolDownTime: 2
+  coolDownTime: 0.9
+  coolDownTime2: 1
 --- !u!1 &1520786196
 GameObject:
   m_ObjectHideFlags: 0

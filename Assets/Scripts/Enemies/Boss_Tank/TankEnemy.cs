@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TankEnemy : MonoBehaviour
 {
-    protected NavMeshAgent agent;
+    protected UnityEngine.AI.NavMeshAgent agent;
     protected Transform player;
     int damage = 10;
 
@@ -16,7 +16,7 @@ public class TankEnemy : MonoBehaviour
 
     void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
     }
     void Start()
