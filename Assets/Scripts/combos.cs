@@ -23,6 +23,7 @@ public class combos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(combo1);
         //Combo1
         if (Time.time - nextFireTime > coolDownTime)
         {
@@ -32,13 +33,15 @@ public class combos : MonoBehaviour
         //checks where we are during animation
         AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-        if (stateInfo.normalizedTime > 0.5f && stateInfo.IsName("hook punch") && combo1 >= 2)
+        if (/*stateInfo.normalizedTime > 0.5f && stateInfo.IsName("hook punch") && */ combo1 == 2)
         {
             animator.SetBool("hook punch", false);
             animator.SetBool("punch", true);
             Debug.Log("punch");
+            //animator.SetTrigger("triggerPunch");
+            
         }
-        if (stateInfo.normalizedTime > 0.5f && stateInfo.IsName("punch") && combo1 >= 3)
+        if (/*stateInfo.normalizedTime > 0.5f && stateInfo.IsName("punch") &&*/ combo1 == 3)
         {
             animator.SetBool("punch", false);
             animator.SetBool("eldow punch", true);
@@ -64,13 +67,13 @@ public class combos : MonoBehaviour
         //checks where we are during animation
         AnimatorStateInfo stateInfo2 = animator.GetCurrentAnimatorStateInfo(0);
 
-        if (stateInfo.normalizedTime > 0.5f && stateInfo.IsName("hook punchC2") && combo2 >= 2)
+        if (combo2 == 2)
         {
             animator.SetBool("hook punchC2", false);
             animator.SetBool("HeadButt", true);
             Debug.Log("HeadButt");
         }
-        if (stateInfo.normalizedTime > 0.5f && stateInfo.IsName("HeadButt") && combo2 >= 3)
+        if (combo2 == 3)
         {
             animator.SetBool("HeadButt", false);
             animator.SetBool("HighKick", true);

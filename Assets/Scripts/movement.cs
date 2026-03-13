@@ -142,6 +142,7 @@ public class movement : MonoBehaviour
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
             animator.SetBool("Jump", true);
+            //invoke to false after 1.26 seconds
             
         }
         //Jump kick (combo 3)
@@ -149,6 +150,7 @@ public class movement : MonoBehaviour
         {
             Debug.Log("player has jump Kick");
             animator.SetBool("Jump Kick", true);
+            //invoke to false after 1.26 seconds
         }
 
         // Apply gravity
