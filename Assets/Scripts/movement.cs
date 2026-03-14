@@ -143,7 +143,8 @@ public class movement : MonoBehaviour
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
             animator.SetBool("Jump", true);
             //invoke to false after 1.26 seconds
-            
+            Invoke("Jumpy", 2);
+
         }
         //Jump kick (combo 3)
         if (groundedPlayer != true && Input.GetKeyDown(KeyCode.Z))
@@ -151,6 +152,7 @@ public class movement : MonoBehaviour
             Debug.Log("player has jump Kick");
             animator.SetBool("Jump Kick", true);
             //invoke to false after 1.26 seconds
+            Invoke("JumpyKick", 1.26f);
         }
 
         // Apply gravity
@@ -159,6 +161,15 @@ public class movement : MonoBehaviour
         // Combine horizontal and vertical movement
         Vector3 finalMove = (move * playerSpeed) + (playerVelocity.y * Vector3.up);
         controller.Move(finalMove * Time.deltaTime);
+    }
+    public void Jumpy()
+    {
+        animator.SetBool("Jump", false);
+    }
+
+    public void JumpyKick()
+    {
+        animator.SetBool("Jump Kick", false);
     }
 
     /*
@@ -211,5 +222,5 @@ public class movement : MonoBehaviour
         }
     }
     */
-    
+
 }
