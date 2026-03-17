@@ -5,6 +5,7 @@ using System;
 public class Enemy : MonoBehaviour
 {
     public static Action<Enemy> OnEnemyKilled;
+    public static Action<Enemy> OnEnemyHit;
 
     public int maxHealth = 10;
     public int currentHealth;
@@ -27,6 +28,8 @@ public class Enemy : MonoBehaviour
         if (isDead) return;
 
         currentHealth -= damage;
+
+        OnEnemyHit?.Invoke(this);
 
         if (currentHealth <= 0)
         {

@@ -14,7 +14,7 @@ public class ClickToKill : MonoBehaviour
                 Enemy enemy = hit.collider.GetComponent<Enemy>();
                 if (enemy != null)
                 {
-                    enemy.Kill();
+                    enemy.TakeDamage(1);
                 }
             }
         }
