@@ -13,6 +13,7 @@ public class TankEnemy : EnemyBehavior
 
     public override void Attack()
     {
+        base.Attack();
         //"slap" the player
     }
 

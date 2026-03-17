@@ -12,6 +12,11 @@ public class EnemyBehavior : MonoBehaviour
 
     public float attackRange = 2f;
     public float attackCooldown = 3f;
+    public int damage = 10;  //  set damage in enemy prefab or in enemy script start
+
+    // attack sphere variables
+    public float attackRadius = 0.5f;
+    public LayerMask playerLayer;
 
     // stun variables
     protected bool isStunned = false;
@@ -39,6 +44,7 @@ public class EnemyBehavior : MonoBehaviour
             if (Time.time >= stunEndTime)
             {
                 isStunned = false;
+                animator.SetBool("isStunned", false);
             }
             return;
         }
@@ -79,7 +85,19 @@ public class EnemyBehavior : MonoBehaviour
 
     public virtual void Attack()
     {
-        Debug.Log("Enemy Attack");
+        Vector3 attackPoint = transform.position + transform.forward * 1.5f;
+
+        Collider[] hits = Physics.OverlapSphere(attackPoint, attackRadius, playerLayer);
+
+        foreach (Collider hit in hits)
+        {
+            // PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
+
+            // if (playerHealth != null)
+            //{
+                // playerHealth.TakeDamage(damage);
+            //}
+        }
     }
 
     void HandleEnemyHit(Enemy hitEnemy)
@@ -95,10 +113,19 @@ public class EnemyBehavior : MonoBehaviour
     void Stun()
     {
         isStunned = true;
+        animator.SetBool("isStunned", true);
         stunEndTime = Time.time + stunDuration;
 
         agent.ResetPath();
 
         Debug.Log("Enemy Stunned");
     }
+
+    #region Gizmos
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + transform.forward * 1.5f, attackRadius);
+    }
+    #endregion Gizmos
 }

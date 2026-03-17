@@ -2,19 +2,18 @@ using UnityEngine;
 
 public class Grunt_Tank : EnemyBehavior
 {
-    public int damage = 5;
-
     protected override void Awake()
     {
         base.Awake();
 
         agent.speed = 2f;
         attackRange = 2.5f;
-        attackCooldown = 3f;
+        attackCooldown = 5f;
     }
 
     public override void Attack()
     {
+        base.Attack();
         animator.SetTrigger("attackHeadbutt");
         Debug.Log("Tank hits player");
     }

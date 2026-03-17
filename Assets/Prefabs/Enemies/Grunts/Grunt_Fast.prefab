@@ -153,3 +153,8 @@ MonoBehaviour:
   attackRange: 2
   attackCooldown: 1.5
   damage: 1
+  attackRadius: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  stunDuration: 2
