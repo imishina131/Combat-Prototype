@@ -1,46 +1,17 @@
 using UnityEngine;
 
-public class TankEnemy : MonoBehaviour
+public class TankEnemy : EnemyBehavior
 {
-    protected UnityEngine.AI.NavMeshAgent agent;
-    protected Transform player;
-    int damage = 10;
-
-    float speed = 1.2f;
-    float attackRange = 3f;
-    float attackCooldown = 3f;
-
-    float health = 100f;
-
-
-
-    void Awake()
+    protected override void Awake()
     {
-        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-    void Start()
-    {
-        
+        base.Awake();
+
+        agent.speed = 3f;
+        attackRange = 1.2f;
+        attackCooldown = 4f;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        float distance = Vector3.Distance(transform.position, player.position);
-
-        if (distance <= attackRange)
-        {
-            agent.ResetPath();
-            Attack();
-        }
-        else
-        {
-            ChasePlayer();
-        }
-    }
-
-    void Attack()
+    public override void Attack()
     {
         //"slap" the player
     }
@@ -48,10 +19,5 @@ public class TankEnemy : MonoBehaviour
     void ThrowProjectile()
     {
         //instantiate projectile thrown at last player position
-    }
-
-    void ChasePlayer()
-    {
-
     }
 }

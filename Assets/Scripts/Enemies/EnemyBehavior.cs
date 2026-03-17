@@ -4,7 +4,7 @@ using UnityEngine.AI;
 public class EnemyBehavior : MonoBehaviour
 {
     // reference to enemy class
-    private Enemy enemy;
+    protected Enemy enemy;
 
     // protected keeps it private but lets children access it
     protected NavMeshAgent agent;

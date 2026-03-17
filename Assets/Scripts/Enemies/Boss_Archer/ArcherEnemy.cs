@@ -6,21 +6,12 @@ public class ArcherEnemy : EnemyBehavior
     public GameObject arrowPrefab;
     public Transform firePoint;
 
-    Enemy enemy;
-
     public float teleportRadius = 8f;
     public float archerAttackRange = 15f;
     public float safeDistance = 4f;
     public float teleportDelay = 2f;
 
     private float closeTimer = 0f;
-
-    protected override void Awake()
-    {
-        base.Awake();
-
-        enemy = GetComponent<Enemy>();
-    }
 
     protected override void Update()
     {
