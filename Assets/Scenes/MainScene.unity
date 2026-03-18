@@ -869,6 +869,77 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1128593419}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &1848458571
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1848458573}
+  - component: {fileID: 1848458572}
+  m_Layer: 0
+  m_Name: WaveManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1848458572
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848458571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62233e98b87bba34bb5e29f332004401, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaveManager
+  enemyTypes:
+  - enemyName: Grunt_Basic
+    prefab: {fileID: 0}
+    pointCost: 3
+    weight: 30
+  - enemyName: Grunt_Fast
+    prefab: {fileID: 226895579075840175, guid: 0ff92b666d4afed46a6280d37b09a4c3, type: 3}
+    pointCost: 5
+    weight: 15
+  - enemyName: Grunt_Tank
+    prefab: {fileID: 2290376820498851240, guid: c9ee2955a395c9b4d817934c85ad8b7e, type: 3}
+    pointCost: 5
+    weight: 15
+  - enemyName: Grunt_Flying
+    prefab: {fileID: 0}
+    pointCost: 5
+    weight: 20
+  - enemyName: Boss_Tank
+    prefab: {fileID: 0}
+    pointCost: 10
+    weight: 10
+  - enemyName: Boss_Archer
+    prefab: {fileID: 2581147497804539748, guid: d3dce93c941a26f4aaea74470b703cf1, type: 3}
+    pointCost: 10
+    weight: 10
+  wavePointCap: 20
+  timeBetweenWaves: 3
+--- !u!4 &1848458573
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1848458571}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.96214, y: -0, z: -2.08682}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1889608930
 GameObject:
   m_ObjectHideFlags: 0
@@ -1102,3 +1173,4 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1128593419}
   - {fileID: 584985993}
+  - {fileID: 1848458573}
