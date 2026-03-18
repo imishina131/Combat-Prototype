@@ -14,6 +14,7 @@ public class TankEnemy : EnemyBehavior
     public override void Attack()
     {
         base.Attack();
+        animator.SetTrigger("attackHeadbutt");
         //"slap" the player
     }
 
