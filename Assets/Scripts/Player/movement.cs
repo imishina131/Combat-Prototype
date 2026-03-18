@@ -15,6 +15,9 @@ public class movement : MonoBehaviour
     private bool groundedPlayer;
 
     private Animator animator;
+
+    // camera variables
+    public Transform cameraTransform;
     /*
     //combo1
     public float coolDownTime = 1f;
@@ -121,6 +124,30 @@ public class movement : MonoBehaviour
             playerVelocity.y = 0.1f;
         }
 
+        Vector2 input = moveAction.action.ReadValue<Vector2>();
+
+        // Gets camera forward & right
+        Vector3 camForward = cameraTransform.forward;
+        Vector3 camRight = cameraTransform.right;
+
+        camForward.y = 0f;
+        camRight.y = 0f;
+
+        camForward.Normalize();
+        camRight.Normalize();
+
+        // Create movement relative to camera
+        Vector3 move = camForward * input.y + camRight * input.x;
+        move = Vector3.ClampMagnitude(move, 1f);
+
+        // Rotate Player towaard movement direction
+        if (move !=  Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(move);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+        }
+
+        /* commented out by cameron
         // Read input
         Vector2 input = moveAction.action.ReadValue<Vector2>();
         Vector3 move = new Vector3(input.x, 0, input.y);
@@ -130,6 +157,7 @@ public class movement : MonoBehaviour
         {
             transform.forward = move;
         }
+        */
 
         if (move == Vector3.zero)
         {
