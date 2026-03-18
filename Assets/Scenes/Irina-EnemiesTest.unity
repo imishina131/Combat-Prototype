@@ -406,7 +406,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       propertyPath: m_Name
-      value: Enemy
+      value: Tank_Boss
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       propertyPath: m_Controller
@@ -414,11 +414,17 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: e2a5a837f175e0e4a9abc6d51ce27ac2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1044344268}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1065685502}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1065685506}
   m_SourcePrefab: {fileID: 100100000, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
 --- !u!1 &1022903408
 GameObject:
@@ -450,6 +456,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1805489716}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1044344267
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1044344268}
+  m_Layer: 0
+  m_Name: StartLocProjectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1044344268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1044344267}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.61, y: 1.42, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1065685505}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1054334853
 GameObject:
@@ -592,6 +629,33 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!4 &1065685505 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
+  m_PrefabInstance: {fileID: 942523763}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1065685506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1065685498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae2adcba6be4d0140b16b7c30f0e8a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TankEnemy
+  attackRange: 2
+  attackCooldown: 3
+  damage: 10
+  attackRadius: 0.5
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  stunDuration: 2
+  projectile: {fileID: 5078792501290197030, guid: fab4e72e9f039fe4e8e184f9cd9343d5, type: 3}
+  startLocation: {fileID: 1044344268}
 --- !u!1 &1106285906
 GameObject:
   m_ObjectHideFlags: 0
@@ -959,7 +1023,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2142185594}
   m_SourcePrefab: {fileID: 100100000, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
 --- !u!1001 &1674480563
 PrefabInstance:
@@ -1318,6 +1385,11 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!1 &2029718161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
+  m_PrefabInstance: {fileID: 1596329135}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2068369435
 GameObject:
   m_ObjectHideFlags: 0
@@ -1354,6 +1426,29 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
   m_PrefabInstance: {fileID: 1596329135}
   m_PrefabAsset: {fileID: 0}
+--- !u!136 &2142185594
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029718161}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3106316
+  m_Height: 1.8589693
+  m_Direction: 1
+  m_Center: {x: 0.008642812, y: 0.8768755, z: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

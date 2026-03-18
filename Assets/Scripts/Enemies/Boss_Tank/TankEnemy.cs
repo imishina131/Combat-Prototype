@@ -2,24 +2,30 @@ using UnityEngine;
 
 public class TankEnemy : EnemyBehavior
 {
+
+    public GameObject projectile;
+    public Transform startLocation;
+
     protected override void Awake()
     {
         base.Awake();
 
         agent.speed = 3f;
-        attackRange = 1.2f;
+        attackRange = 5f;
         attackCooldown = 4f;
     }
 
     public override void Attack()
     {
         base.Attack();
-        animator.SetTrigger("attackHeadbutt");
+        ThrowProjectile();
+        //animator.SetTrigger("attackHeadbutt");
         //"slap" the player
     }
 
     void ThrowProjectile()
     {
-        //instantiate projectile thrown at last player position
+        Instantiate(projectile, startLocation.position, Quaternion.identity);
+
     }
 }
