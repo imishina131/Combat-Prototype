@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.76
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.492
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
       propertyPath: m_LocalRotation.w
@@ -50,6 +50,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
