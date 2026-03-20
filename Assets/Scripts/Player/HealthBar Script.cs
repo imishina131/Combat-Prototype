@@ -11,10 +11,15 @@ public class HealthBarScript : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _HpText;
     //[SerializeField] private float _fillSpeed;
     [SerializeField] private Gradient _colored;
+
+    // ADDED BY CAMERON
+    private ThirdPersonCamera cam;
+
     void Start()
     {
         _currentHP = _MaxHP;
         _HpText.text = " Health: " + _currentHP;
+        cam = Camera.main.GetComponent<ThirdPersonCamera>();
     }
     private void Update()
     {
@@ -41,4 +46,14 @@ public class HealthBarScript : MonoBehaviour
         _healthBarFill.color= _colored.Evaluate(targetFillamount);
     }
 
+    // ADDED BY CAMERON
+    public void TakeDamage(float damage)
+    {
+        UpdatingHP(-damage);
+
+        if (cam != null)
+        {
+            cam.Shake(0.2f, 0.15f);
+        }
+    }
 }

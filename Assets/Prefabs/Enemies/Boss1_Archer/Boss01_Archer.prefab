@@ -994,7 +994,7 @@ GameObject:
   - component: {fileID: 5007995441783176096}
   - component: {fileID: 3134257692442478448}
   - component: {fileID: 5917173943587207233}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Boss01_Archer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1101,6 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   maxHealth: 10
   currentHealth: 0
+  isDead: 0
 --- !u!114 &5917173943587207233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1115,6 +1116,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ArcherEnemy
   attackRange: 2
   attackCooldown: 1.5
+  damage: 10
+  attackRadius: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  stunDuration: 2
   arrowPrefab: {fileID: 4436049261849682944, guid: 16dfead814f0b8e4faef4eb3c2cddf8e, type: 3}
   firePoint: {fileID: 8227768978677490239}
   teleportRadius: 8

@@ -3,6 +3,8 @@ using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
+    HealthBarScript playerHealth;
+
     // reference to enemy class
     protected Enemy enemy;
 
@@ -33,6 +35,7 @@ public class EnemyBehavior : MonoBehaviour
 
         agent = GetComponent<NavMeshAgent>();
         player = GameObject.FindGameObjectWithTag("Player").transform;
+        playerHealth = player.GetComponent<HealthBarScript>();
 
         animator = GetComponent<Animator>();
     }
@@ -91,12 +94,12 @@ public class EnemyBehavior : MonoBehaviour
 
         foreach (Collider hit in hits)
         {
-            // PlayerHealth playerHealth = hit.GetComponent<PlayerHealth>();
+            HealthBarScript hp = hit.GetComponent<HealthBarScript>();
 
-            // if (playerHealth != null)
-            //{
-                // playerHealth.TakeDamage(damage);
-            //}
+            if (hp != null)
+            {
+                hp.TakeDamage(damage);
+            }
         }
     }
 

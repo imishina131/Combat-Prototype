@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class combos : MonoBehaviour
 {
+    // ADDED BY CAMERON
+    // PLAYER ATTACKS HERE
+    public Transform attackPoint;
+    public float attackRadius = 2f;
+    public int damage = 5;
+    public LayerMask enemyLayer;
+
     private Animator animator;
     //combo1
     public float coolDownTime = 1.0f;
@@ -147,4 +154,28 @@ void LightCombo()
         animator.SetBool("HighKick", false);
     }
 
+    // ADDED BY CAMERON
+    void DealDamage()
+    {
+        Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRadius, enemyLayer);
+
+        foreach (Collider hit in hits)
+        {
+            Enemy enemy = hit.GetComponent<Enemy>();
+
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+                Debug.Log("enemy damaged by player");
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null) return;
+
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawWireSphere(attackPoint.position, attackRadius);
+    }
 }

@@ -22,7 +22,7 @@ public class PlayerScore : MonoBehaviour
     public void UpdatingHP(float amount)
     {
         _playerScore += amount;
-        _playerScore = Mathf.Clamp(_playerScore, 0f, 0f);
+        _playerScore = Mathf.Clamp(_playerScore, 0f, 9999f);
         _ScoreText.text = " Score: " + _playerScore;
     }
 }

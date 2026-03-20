@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
       propertyPath: m_Layer
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
       propertyPath: m_TagString
@@ -82,6 +82,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8993203918556891140}
   m_SourcePrefab: {fileID: 100100000, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
+--- !u!4 &2469671043592034532 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
+  m_PrefabInstance: {fileID: 2723747346396643087}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2958258119990264414 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 093b1a03d5249aa4aba19953c3bb8506, type: 3}
@@ -99,6 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3899f9c06ede77c4ab43879afeeea5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::movement
+  cameraTransform: {fileID: 0}
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
 --- !u!143 &1671452862895848301
@@ -138,5 +144,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54068336ebba5c0449b6b6e4c6c0cb52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::combos
+  attackPoint: {fileID: 2469671043592034532}
+  attackRadius: 2
+  damage: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
   coolDownTime: 0.9
   coolDownTime2: 1
