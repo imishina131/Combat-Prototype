@@ -46,7 +46,7 @@ public class combos : MonoBehaviour
             animator.SetBool("punch", true);
             Debug.Log("punch");
             
-            
+            DealDamage();
         }
         //combo 1 attack 3
         if (combo1 == 3)
@@ -54,6 +54,8 @@ public class combos : MonoBehaviour
             animator.SetBool("punch", false);
             animator.SetBool("eldow punch", true);
             Debug.Log("eldow punch");
+
+            DealDamage();
         }
         if (stateInfo.normalizedTime > 0.5f && stateInfo.IsName("eldow punch"))
         {
@@ -82,6 +84,8 @@ public class combos : MonoBehaviour
             animator.SetBool("hook punchC2", false);
             animator.SetBool("HeadButt", true);
             Debug.Log("HeadButt");
+
+            DealDamage();
         }
 
         ////combo 2 attack 3
@@ -90,6 +94,8 @@ public class combos : MonoBehaviour
             animator.SetBool("HeadButt", false);
             animator.SetBool("HighKick", true);
             Debug.Log("HighKick");
+
+            DealDamage();
         }
         if (stateInfo.normalizedTime > 0.5f && stateInfo.IsName("HighKick"))
         {
@@ -117,6 +123,8 @@ void LightCombo()
         {
             animator.SetBool("hook punch", true);
             Debug.Log("hook punch");
+
+            DealDamage();
         }
     }
 
@@ -145,6 +153,8 @@ void LightCombo()
         {
             animator.SetBool("hook punchC2", true);
             Debug.Log("hook punchC2");
+
+            DealDamage();
         }
     }
 
