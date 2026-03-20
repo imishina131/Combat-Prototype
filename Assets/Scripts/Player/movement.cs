@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -109,12 +110,26 @@ public class movement : MonoBehaviour
             Invoke("JumpyKick", 1.26f);
         }
 
+        //dodge
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            animator.SetTrigger("TDodge");
+            playerSpeed = 7.5f;
+            Invoke("DodgeTime", 1.5f);
+        }
+
         // Apply gravity
         playerVelocity.y += gravityValue * Time.deltaTime;
 
         // Combine horizontal and vertical movement
         Vector3 finalMove = (move * playerSpeed) + (playerVelocity.y * Vector3.up);
         controller.Move(finalMove * Time.deltaTime);
+    }
+    public void DodgeTime()
+    {
+        playerSpeed = 5.0f;
+        
     }
     public void Jumpy()
     {
