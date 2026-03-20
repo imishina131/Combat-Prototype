@@ -1101,6 +1101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   maxHealth: 10
   currentHealth: 0
+  healthPickup: {fileID: 6888358477888581324, guid: db24b813fbd1b7145bef6aa6938fcef4, type: 3}
   isDead: 0
 --- !u!114 &5917173943587207233
 MonoBehaviour:

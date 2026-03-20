@@ -10,6 +10,8 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 10;
     public int currentHealth;
 
+    public GameObject healthPickup;
+
     private Animator animator;
     public bool isDead = false;
 
@@ -42,6 +44,15 @@ public class Enemy : MonoBehaviour
         isDead = true;
 
         animator.SetTrigger("enemyDeath");
+
+        // 5 percent chance to drop health on death
+        if (UnityEngine.Random.value < 0.5f)
+        {
+            if (healthPickup != null)
+            {
+                Instantiate(healthPickup, transform.position, Quaternion.identity);
+            }
+        }
 
         OnEnemyKilled?.Invoke(this);
         Destroy(gameObject, 5f);

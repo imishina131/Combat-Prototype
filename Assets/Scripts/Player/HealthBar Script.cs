@@ -29,6 +29,15 @@ public class HealthBarScript : MonoBehaviour
             //play death amination, reSpwan player or reload scene (maybe Add a fade to black)?
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("healthPickup"))
+        {
+            HealHealth(10);
+        }
+    }
+
     public void UpdatingHP (float amount)
     {
         _currentHP += amount;
@@ -55,5 +64,10 @@ public class HealthBarScript : MonoBehaviour
         {
             cam.Shake(0.2f, 0.15f);
         }
+    }
+
+    public void HealHealth(float heal)
+    {
+        Mathf.Clamp(heal, 0f, _MaxHP);
     }
 }
