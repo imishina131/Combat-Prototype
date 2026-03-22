@@ -36,6 +36,10 @@ public class HealthBarScript : MonoBehaviour
         {
             HealHealth(10);
         }
+        if (other.gameObject.CompareTag("enemy"))
+        {
+            HealHealth(-10);
+        }
     }
 
     public void UpdatingHP (float amount)
