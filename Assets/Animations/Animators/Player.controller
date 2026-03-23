@@ -42,6 +42,9 @@ AnimatorStateMachine:
   - serializedVersion: 1
     m_State: {fileID: 4518856799681372960}
     m_Position: {x: 420, y: 260, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 3581917555496840402}
+    m_Position: {x: 558.5709, y: 346.41473, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -208689881172497072}
@@ -744,6 +747,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &3581917555496840402
+AnimatorState:
+  serializedVersion: 6
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Standing Dodge Backward
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: -203655887218126122, guid: d1de5160034f3ce4b86aa446311aabef, type: 3}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &4015986955874708660
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -815,7 +844,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: -203655887218126122, guid: 0de487cf59d1baa4194d78f2086a5d83, type: 3}
+  m_Motion: {fileID: -203655887218126122, guid: cc57a2e338879be4aa7439591debeea7, type: 3}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

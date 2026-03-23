@@ -3,6 +3,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using System.Collections;
 
 public class movement : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class movement : MonoBehaviour
 
     // camera variables
     public Transform cameraTransform;
+
+    public static movement instance;
+    public bool isDodging = false;
 
 
     [Header("Input Actions")]
@@ -129,6 +133,7 @@ public class movement : MonoBehaviour
     public void DodgeTime()
     {
         playerSpeed = 5.0f;
+        StartCoroutine(Dodge());
         
     }
     public void Jumpy()
@@ -140,6 +145,15 @@ public class movement : MonoBehaviour
     {
         animator.SetBool("Jump Kick", false);
     }
+
+    IEnumerator Dodge()
+    {
+        isDodging = true;
+        yield return new WaitForSeconds(2f);
+        isDodging = false;
+    }
+
+
 
    
 }
