@@ -12,6 +12,12 @@ public class movement : MonoBehaviour
     private float jumpHeight = 1.5f;
     private float gravityValue = -9.81f;
 
+    //new for knockback
+    public float knockbackDecay = 5f; // How quickly knockback fades
+    private Vector3 knockbackVelocity; // Knockback movement
+    //new for knockback
+
+
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
@@ -126,10 +132,26 @@ public class movement : MonoBehaviour
         // Apply gravity
         playerVelocity.y += gravityValue * Time.deltaTime;
 
+
+        //new for knockback
+        // Decay knockback over time
+        knockbackVelocity = Vector3.Lerp(knockbackVelocity, Vector3.zero, knockbackDecay * Time.deltaTime);
+        //new for knockback
+
         // Combine horizontal and vertical movement
         Vector3 finalMove = (move * playerSpeed) + (playerVelocity.y * Vector3.up);
         controller.Move(finalMove * Time.deltaTime);
     }
+    //new for knockback
+    public void ApplyKnockback(Vector3 direction, float force)
+    {
+        if (direction.sqrMagnitude > 0.01f)
+        {
+            knockbackVelocity = direction.normalized * force;
+        }
+    }
+    //new for knockback
+
     public void DodgeTime()
     {
         playerSpeed = 5.0f;
@@ -153,7 +175,19 @@ public class movement : MonoBehaviour
         isDodging = false;
     }
 
+    //new for knockback
+    //testing knockback
+
+    void LateUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            // Knockback backwards and slightly upward
+            ApplyKnockback(-transform.forward + Vector3.up * 0.5f, 5f);
+        }
+    }
+    //new for knockback
 
 
-   
+
 }
