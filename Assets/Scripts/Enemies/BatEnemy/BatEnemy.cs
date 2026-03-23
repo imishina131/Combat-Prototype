@@ -10,22 +10,23 @@ public class BatEnemy : MonoBehaviour
     public float speed = 20f;
     private float rotationSpeed = 7.5f;
     private float circleDuration = 5f;
+    private float attackDuration = 10f;
+
     private float waypointDistanceThreshold = 2f;
 
     private Transform currentWaypointTarget;
     public Transform[] waypoints;
 
+    public GameObject projectile;
+    public Transform startLocation;
+    private bool isAttacking = false;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        //if(waypointHolder != null)
-        //{
-         //   waypointHolder.RefreshWaypoints();
-           // waypoints = waypointHolder.Waypoints;
-        //}
 
-        if(waypoints == null || waypoints.Length == 0)
+        if (waypoints == null || waypoints.Length == 0)
         {
             StartCoroutine(StateMachine());
         }
@@ -36,7 +37,7 @@ public class BatEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     private IEnumerator StateMachine()
@@ -44,21 +45,14 @@ public class BatEnemy : MonoBehaviour
         while (true)
         {
             yield return StartCoroutine(Patrol(circleDuration));
+            yield return StartCoroutine(FireProjectile(attackDuration));
         }
     }
 
-    private void FaceTarget(Vector3 targetPos)
-    {
-        Vector3 dir = targetPos - transform.position;
-        if (dir.sqrMagnitude < 0.0001f) return;
-
-        dir.Normalize();
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * rotationSpeed);
-    }
 
     private void PickRandomPoint()
     {
-        if(waypoints != null && waypoints.Length > 0)
+        if (waypoints != null && waypoints.Length > 0)
         {
             currentWaypointTarget = waypoints[Random.Range(0, waypoints.Length)];
 
@@ -80,7 +74,6 @@ public class BatEnemy : MonoBehaviour
     private void MoveTowardsTarget(Vector3 targetPos)
     {
         Vector3 dir = targetPos - transform.position;
-        //if (dir.sqrMagnitude < 0.0001f) return;
 
         dir.Normalize();
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), Time.deltaTime * rotationSpeed);
@@ -92,23 +85,35 @@ public class BatEnemy : MonoBehaviour
 
     private IEnumerator Patrol(float duration)
     {
-        float timer = 0f;
-        PickRandomPoint();
-        while (timer < duration)
+        if(!isAttacking)
         {
-            timer += Time.deltaTime;
-
-            if(currentWaypointTarget)
+            float timer = 0f;
+            PickRandomPoint();
+            while (timer < duration)
             {
-                MoveTowardsTarget(currentWaypointTarget.position);
-            }
+                timer += Time.deltaTime;
 
-            if(ReachWayPoint())
-            {
-                PickRandomPoint();
-            }
+                if (currentWaypointTarget)
+                {
+                    MoveTowardsTarget(currentWaypointTarget.position);
+                }
 
-            yield return null;
+                if (ReachWayPoint())
+                {
+                    PickRandomPoint();
+                }
+
+                yield return null;
+            }
         }
+        
+    }
+
+    private IEnumerator FireProjectile(float duration)
+    {
+        isAttacking = true;
+        Instantiate(projectile, startLocation.position, Quaternion.identity);
+        yield return new WaitForSeconds(2.0f);
+        isAttacking = false;
     }
 }

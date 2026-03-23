@@ -20,11 +20,14 @@ public class ProjectileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += direction * speed * Time.deltaTime;
+        transform.position += new Vector3(direction.x, direction.y + 0.3f, direction.z) * speed * Time.deltaTime;
     }
 
     void OnCollisionEnter(Collision collision)
     {
-        Destroy(gameObject);
+        if(collision.collider.CompareTag("Player") || collision.collider.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 }
