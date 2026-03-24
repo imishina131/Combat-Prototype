@@ -35,13 +35,9 @@ public class HealthBarScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("healthPickup"))
+        if (other.CompareTag("healthPickup"))
         {
             HealHealth(10);
-        }
-        if (other.gameObject.CompareTag("enemy"))
-        {
-            HealHealth(-10);
         }
     }
 
@@ -80,5 +76,6 @@ public class HealthBarScript : MonoBehaviour
     public void HealHealth(float heal)
     {
         Mathf.Clamp(heal, 0f, _MaxHP);
+        UpdatingHP(heal);
     }
 }
