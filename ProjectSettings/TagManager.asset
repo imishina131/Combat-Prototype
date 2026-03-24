@@ -6,6 +6,7 @@ TagManager:
   tags:
   - healthPickup
   - Ground
+  - waypoint
   layers:
   - Default
   - TransparentFX
