@@ -15,6 +15,5 @@ public class Grunt_Tank : EnemyBehavior
     {
         base.Attack();
         animator.SetTrigger("attackHeadbutt");
-        Debug.Log("Tank hits player");
     }
 }

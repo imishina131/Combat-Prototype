@@ -18,7 +18,7 @@ public class EnemyBehavior : MonoBehaviour
 
     // attack sphere variables
     public float attackRadius = 0.5f;
-    public LayerMask playerLayer;
+    public LayerMask Player;
 
     // stun variables
     protected bool isStunned = false;
@@ -90,15 +90,18 @@ public class EnemyBehavior : MonoBehaviour
     {
         Vector3 attackPoint = transform.position + transform.forward * 1.5f;
 
-        Collider[] hits = Physics.OverlapSphere(attackPoint, attackRadius, playerLayer);
+        Collider[] hits = Physics.OverlapSphere(attackPoint, attackRadius, Player);
 
         foreach (Collider hit in hits)
         {
-            HealthBarScript hp = hit.GetComponent<HealthBarScript>();
-
-            if (hp != null)
+            if (playerHealth != null)
             {
-                hp.TakeDamage(damage);
+                playerHealth.TakeDamage(damage);
+                Debug.Log("Player took damage");
+            }
+            else
+            {
+                Debug.Log("no player found");
             }
         }
     }
@@ -120,8 +123,6 @@ public class EnemyBehavior : MonoBehaviour
         stunEndTime = Time.time + stunDuration;
 
         agent.ResetPath();
-
-        Debug.Log("Enemy Stunned");
     }
 
     #region Gizmos

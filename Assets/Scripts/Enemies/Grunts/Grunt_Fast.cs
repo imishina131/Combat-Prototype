@@ -15,7 +15,5 @@ public class Grunt_Fast : EnemyBehavior
     {
         base.Attack();
         animator.SetTrigger("attackPunch");
-        // grab player method to take damage
-        Debug.Log("Fast Enemy Hit Player");
     }
 }

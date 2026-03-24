@@ -62,12 +62,12 @@ public class HealthBarScript : MonoBehaviour
     // ADDED BY CAMERON
     public void TakeDamage(float damage)
     {
-        if(movement.instance.isDodging = false)
+        if(movement.isDodging == false)
         {
             UpdatingHP(-damage);
+            Debug.Log("Player took damage");
         }
         
-
         if (cam != null)
         {
             cam.Shake(0.2f, 0.15f);
