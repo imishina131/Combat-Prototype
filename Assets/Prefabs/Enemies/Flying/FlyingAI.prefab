@@ -195,7 +195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BatEnemy
   player: {fileID: 0}
-  speed: 10
+  speed: 6
   waypoints:
   - {fileID: 0}
   - {fileID: 0}

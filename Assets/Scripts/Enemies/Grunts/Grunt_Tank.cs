@@ -7,7 +7,7 @@ public class Grunt_Tank : EnemyBehavior
         base.Awake();
 
         agent.speed = 2f;
-        attackRange = 2.5f;
+        attackRange = 1.5f;
         attackCooldown = 5f;
     }
 

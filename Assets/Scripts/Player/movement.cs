@@ -27,6 +27,7 @@ public class movement : MonoBehaviour
 
     // camera variables
     public Transform cameraTransform;
+    ThirdPersonCamera cam;
 
     public static movement instance;
     public bool isDodging = false;
@@ -47,6 +48,7 @@ public class movement : MonoBehaviour
     {
         controller = gameObject.GetComponent<CharacterController>();
         animator = GetComponent<Animator>();
+        cam = Camera.main.GetComponent<ThirdPersonCamera>();
     }
 
     private void OnEnable()
@@ -215,6 +217,11 @@ public class movement : MonoBehaviour
             {
                 enemy.TakeDamage(damage);
                 Debug.Log("enemy damaged by player");
+            }
+
+            if (cam != null)
+            {
+                cam.Shake(0.2f, 0.15f);
             }
         }
     }

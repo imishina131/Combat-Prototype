@@ -25,6 +25,7 @@ public class EnemyBehavior : MonoBehaviour
     protected float stunEndTime;
     public float stunDuration = 2f;
 
+
     protected float lastAttackTime;
 
     protected Animator animator;
@@ -56,6 +57,17 @@ public class EnemyBehavior : MonoBehaviour
         }
 
         float distance = Vector3.Distance(transform.position, player.position);
+
+        // if an enemy is dead they will stop following the player
+        if (enemy != null && enemy.isDead)
+        {
+            if (agent != null)
+            {
+                agent.ResetPath();
+                agent.isStopped = true;
+            }
+            return;
+        }
 
         if (distance <= attackRange)
         {

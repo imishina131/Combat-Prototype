@@ -64,6 +64,8 @@ public class Enemy : MonoBehaviour
 
     void ResetEnemyState()
     {
+        if (isDead) return;
+
         if (rb != null)
         {
             rb.linearVelocity = Vector3.zero; 
@@ -88,7 +90,8 @@ public class Enemy : MonoBehaviour
         }
         if (agent != null)
         {
-            agent.ResetPath();
+            agent.isStopped = true;
+            agent.enabled = false;
         }
 
         // 5 percent chance to drop health on death
