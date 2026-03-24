@@ -28,6 +28,7 @@ public class ThirdPersonCamera : MonoBehaviour
 
     private void Update()
     {
+        // press esc to toggle cursor lock
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (cursorLocked)
@@ -45,6 +46,7 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         if (target == null) return;
 
+        // rotate camera around player
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -57,6 +59,7 @@ public class ThirdPersonCamera : MonoBehaviour
         Vector3 offset = new Vector3(0, height, -distance);
         Vector3 desiredPosition = target.position + rotation * offset;
 
+        // if shake timer is set, shakes camera randomly
         if (shakeTimer > 0f)
         {
             Vector3 randomOffset = Random.insideUnitSphere * shakeMagnitude;

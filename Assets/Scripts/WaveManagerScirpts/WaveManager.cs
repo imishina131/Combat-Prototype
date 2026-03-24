@@ -14,7 +14,7 @@ public class WaveManager : MonoBehaviour
     private int currentWave = 0;
     private int aliveEnemies = 0;
 
-    // When an enemy dies, call HandleEnemyKilled
+    // Subscribing to events
     private void OnEnable()
     {
         Enemy.OnEnemyKilled += HandleEnemyKilled;
@@ -32,6 +32,7 @@ public class WaveManager : MonoBehaviour
 
     IEnumerator StartNextWave()
     {
+        // spawns new wave when enough time has passed
         yield return new WaitForSeconds(timeBetweenWaves);
 
         currentWave++;
@@ -59,6 +60,7 @@ public class WaveManager : MonoBehaviour
 
     void SpawnEnemy(EnemyData data)
     {
+        // spawns in a random pos
         Vector3 randomPos = new Vector3(
             Random.Range(-10,10),
             0,
@@ -71,14 +73,17 @@ public class WaveManager : MonoBehaviour
 
     EnemyData GetWeightedRandomEnemy(int pointsRemaining)
     {
+        // list of enemy data
         List<EnemyData> validEnemies = new List<EnemyData>();
 
+        // adds enemy to new list if point cost is less then points remaining
         foreach (var enemy in enemyTypes)
         {
             if (enemy.pointCost <= pointsRemaining)
                 validEnemies.Add(enemy);
         }
 
+        // if no enemies left to pick from return
         if (validEnemies.Count == 0)
             return null;
 
@@ -91,6 +96,8 @@ public class WaveManager : MonoBehaviour
         int randomValue = Random.Range(0, totalWeight);
 
         int cumulative = 0;
+
+        // adds up total weights of enemies assigned in inspector
         foreach (var enemy in validEnemies)
         {
             cumulative += enemy.weight;

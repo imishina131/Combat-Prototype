@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// Created by Cameron
 public class Arrow : MonoBehaviour
 {
     public int damage = 2;
@@ -8,7 +9,9 @@ public class Arrow : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player Hit With Arrow");
+            HealthBarScript playerHealth = collision.gameObject.GetComponent<HealthBarScript>();
+
+            playerHealth.TakeDamage(damage, gameObject);
         }
 
         Destroy(gameObject);

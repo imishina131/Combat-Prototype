@@ -15,16 +15,19 @@ public class ArcherEnemy : EnemyBehavior
 
     protected override void Update()
     {
+        // if dead return
         if (enemy.isDead) return;
 
         float distance = Vector3.Distance(transform.position, player.position);
 
         agent.ResetPath();
 
+        // if player is too close, start timer
         if (distance <= safeDistance)
         {
             closeTimer += Time.deltaTime;
 
+            // if timer exceeds limit, teleport away
             if (closeTimer >= teleportDelay)
             {
                 Teleport();
@@ -36,6 +39,7 @@ public class ArcherEnemy : EnemyBehavior
             closeTimer = 0f;
         }
 
+        // if player is outside of close range, attempt to attack
         if (distance <= archerAttackRange)
         {
             TryAttack();
@@ -49,6 +53,7 @@ public class ArcherEnemy : EnemyBehavior
 
     void ShootArrow()
     {
+        // spawns arrow and fires to players last POS
         if (arrowPrefab != null && firePoint != null)
         {
             GameObject arrow = Instantiate(arrowPrefab, firePoint.position, Quaternion.identity);
@@ -63,6 +68,7 @@ public class ArcherEnemy : EnemyBehavior
         }
     }
 
+    // chooses random pos on nav mesh and teleport to that pos
     void Teleport()
     {
         Vector3 randomDirection = Random.insideUnitSphere * teleportRadius;

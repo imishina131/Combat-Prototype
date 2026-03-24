@@ -43,6 +43,7 @@ public class EnemyBehavior : MonoBehaviour
 
     protected virtual void Update()
     {
+        // if enemy is stunned, loop anim and stop from attacking
         if (isStunned)
         {
             if (Time.time >= stunEndTime)
@@ -69,6 +70,7 @@ public class EnemyBehavior : MonoBehaviour
             return;
         }
 
+        // if player is within attack range, stop moving and try to attack
         if (distance <= attackRange)
         {
             if (agent != null)
@@ -86,6 +88,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+    // subscribing to enemy events
     #region EventSubscription
     private void OnEnable()
     {
@@ -100,7 +103,8 @@ public class EnemyBehavior : MonoBehaviour
 
     protected virtual void TryAttack()
     {
-        if (Time.time >= lastAttackTime + attackCooldown)
+        // if enough time has passed attack
+        if (Time.deltaTime >= lastAttackTime + attackCooldown)
         {
             Attack();
             lastAttackTime = Time.time;
@@ -109,6 +113,7 @@ public class EnemyBehavior : MonoBehaviour
 
     public virtual void Attack()
     {
+        // creates a hitbox infront of the enemy and anything in the player layer gets grabbed and calls the take damage method
         Vector3 attackPoint = transform.position + transform.forward * 1.5f;
 
         Collider[] hits = Physics.OverlapSphere(attackPoint, attackRadius, Player);
@@ -147,6 +152,7 @@ public class EnemyBehavior : MonoBehaviour
         }    
     }
 
+    // used to visually see hitbox when enemy is selected
     #region Gizmos
     private void OnDrawGizmosSelected()
     {

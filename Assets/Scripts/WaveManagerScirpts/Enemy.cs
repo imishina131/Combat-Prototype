@@ -5,6 +5,7 @@ using UnityEngine.AI;
 // this represents an enemy in the world
 public class Enemy : MonoBehaviour
 {
+    // events to help organize 
     public static Action<Enemy> OnEnemyKilled;
     public static Action<Enemy> OnEnemyHit;
 
@@ -54,6 +55,7 @@ public class Enemy : MonoBehaviour
 
         currentHealth -= damage;
 
+        // if any other scipt is listening to this event, invoke this method
         OnEnemyHit?.Invoke(this);
 
         if (currentHealth <= 0)
