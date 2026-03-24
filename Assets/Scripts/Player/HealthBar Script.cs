@@ -1,6 +1,7 @@
 //using DG.Tweening;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class HealthBarScript : MonoBehaviour
@@ -29,7 +30,7 @@ public class HealthBarScript : MonoBehaviour
         if ( _currentHP <= 0)
         {
             Debug.Log("You are Dead");
-            //play death amination, reSpwan player or reload scene (maybe Add a fade to black)?
+            SceneManager.LoadScene("MainScene");
         }
     }
 
