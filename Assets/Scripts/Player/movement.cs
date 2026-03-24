@@ -11,6 +11,7 @@ public class movement : MonoBehaviour
     private float playerSpeed = 5.0f;
     private float jumpHeight = 1.5f;
     private float gravityValue = -9.81f;
+    public bool inAir = false;
 
     //new for knockback
     public float knockbackDecay = 5f; // How quickly knockback fades
@@ -103,12 +104,14 @@ public class movement : MonoBehaviour
         }
 
         // Jump
-        if (jumpAction.action.triggered && groundedPlayer)
+        if (jumpAction.action.triggered && inAir == false)
         {
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2.0f * gravityValue);
             animator.SetBool("Jump", true);
             //invoke to false after 1.26 seconds
             Invoke("Jumpy", 2);
+            inAir = true;
+            Invoke("backtoground", 1.75f);
 
         }
         //Jump kick (combo 3)
@@ -166,6 +169,10 @@ public class movement : MonoBehaviour
     public void JumpyKick()
     {
         animator.SetBool("Jump Kick", false);
+    }
+    public void backtoground()
+    {
+        inAir = false;
     }
 
     IEnumerator Dodge()

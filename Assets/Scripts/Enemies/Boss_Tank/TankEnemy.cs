@@ -18,9 +18,17 @@ public class TankEnemy : EnemyBehavior
     public override void Attack()
     {
         base.Attack();
-        ThrowProjectile();
-        //animator.SetTrigger("attackHeadbutt");
-        //"slap" the player
+
+        int chosenAttack = Random.Range(1, 2);
+
+        if (chosenAttack == 1)
+        {
+            animator.SetTrigger("attackHeadbutt");
+        }
+        else if(chosenAttack == 2)
+        {
+            ThrowProjectile();
+        }
     }
 
     void ThrowProjectile()
