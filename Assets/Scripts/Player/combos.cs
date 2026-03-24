@@ -12,6 +12,7 @@ public class combos : MonoBehaviour
     public LayerMask enemyLayer;
 
     private Animator animator;
+    ThirdPersonCamera cam;
     //combo1
     public float coolDownTime = 1.0f;
     private float nextFireTime;
@@ -25,6 +26,7 @@ public class combos : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        cam = Camera.main.GetComponent<ThirdPersonCamera>();
     }
 
     // Update is called once per frame
@@ -178,6 +180,11 @@ void LightCombo()
             {
                 enemy.TakeDamage(damage);
                 Debug.Log("enemy damaged by player");
+
+                if (cam != null)
+                {
+                    cam.Shake(0.2f, 0.15f);
+                }
             }
         }
     }

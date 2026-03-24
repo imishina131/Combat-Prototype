@@ -13,9 +13,6 @@ public class HealthBarScript : MonoBehaviour
     //[SerializeField] private float _fillSpeed;
     [SerializeField] private Gradient _colored;
 
-    // ADDED BY CAMERON
-    private ThirdPersonCamera cam;
-
     movement movement;
 
     void Start()
@@ -67,11 +64,6 @@ public class HealthBarScript : MonoBehaviour
         {
             UpdatingHP(-damage);
             Debug.Log("Player took damage");
-        }
-        
-        if (cam != null)
-        {
-            cam.Shake(0.2f, 0.15f);
         }
     }
 
