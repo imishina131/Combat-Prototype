@@ -47,7 +47,10 @@ public class EnemyBehavior : MonoBehaviour
             if (Time.time >= stunEndTime)
             {
                 isStunned = false;
-                animator.SetBool("isStunned", false);
+                if (animator != null)
+                {
+                    animator.SetBool("isStunned", false);
+                }    
             }
             return;
         }
@@ -56,12 +59,18 @@ public class EnemyBehavior : MonoBehaviour
 
         if (distance <= attackRange)
         {
-            agent.ResetPath();
+            if (agent != null)
+            {
+                agent.ResetPath();
+            }
             TryAttack();
         }
         else
         {
-            agent.SetDestination(player.position);
+            if (agent != null)
+            {
+                agent.SetDestination(player.position);
+            }
         }
     }
 
@@ -97,11 +106,6 @@ public class EnemyBehavior : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
-                Debug.Log("Player took damage");
-            }
-            else
-            {
-                Debug.Log("no player found");
             }
         }
     }
@@ -119,10 +123,16 @@ public class EnemyBehavior : MonoBehaviour
     void Stun()
     {
         isStunned = true;
-        animator.SetBool("isStunned", true);
+        if (animator != null)
+        {
+            animator.SetBool("isStunned", true);
+        } 
         stunEndTime = Time.time + stunDuration;
 
-        agent.ResetPath();
+        if (agent != null)
+        {
+            agent.ResetPath();
+        }    
     }
 
     #region Gizmos

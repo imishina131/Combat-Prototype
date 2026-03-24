@@ -39,6 +39,7 @@ public class HealthBarScript : MonoBehaviour
         if (other.CompareTag("healthPickup"))
         {
             HealHealth(10);
+            Destroy(other.gameObject);
         }
     }
 

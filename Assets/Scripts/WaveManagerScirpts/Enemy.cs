@@ -46,8 +46,14 @@ public class Enemy : MonoBehaviour
     {
         isDead = true;
 
-        animator.SetTrigger("enemyDeath");
-        agent.ResetPath();
+        if (animator != null)
+        {
+            animator.SetTrigger("enemyDeath");
+        }
+        if (agent != null)
+        {
+            agent.ResetPath();
+        }
 
         // 5 percent chance to drop health on death
         if (UnityEngine.Random.value < 0.5f)
