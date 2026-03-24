@@ -36,6 +36,13 @@ public class movement : MonoBehaviour
     public InputActionReference moveAction; // expects Vector2
     public InputActionReference jumpAction; // expects Button
 
+    // ADDED BY CAMERON
+    // PLAYER ATTACKS HERE
+    public Transform attackPoint;
+    public float attackRadius = 2f;
+    public int damage = 5;
+    public LayerMask enemyLayer;
+
     private void Awake()
     {
         controller = gameObject.GetComponent<CharacterController>();
@@ -117,6 +124,7 @@ public class movement : MonoBehaviour
         //Jump kick (combo 3)
         if (groundedPlayer != true && Input.GetKeyDown(KeyCode.Z))
         {
+            DealDamage();
             Debug.Log("player has jump Kick");
             animator.SetBool("Jump Kick", true);
             //invoke to false after 1.26 seconds
@@ -195,6 +203,20 @@ public class movement : MonoBehaviour
     }
     //new for knockback
 
+    void DealDamage()
+    {
+        Collider[] hits = Physics.OverlapSphere(attackPoint.position, attackRadius, enemyLayer);
 
+        foreach (Collider hit in hits)
+        {
+            Enemy enemy = hit.GetComponent<Enemy>();
+
+            if (enemy != null)
+            {
+                enemy.TakeDamage(damage);
+                Debug.Log("enemy damaged by player");
+            }
+        }
+    }
 
 }

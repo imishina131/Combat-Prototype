@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEngine.AI;
 
 // this represents an enemy in the world
 public class Enemy : MonoBehaviour
@@ -13,11 +14,13 @@ public class Enemy : MonoBehaviour
     public GameObject healthPickup;
 
     private Animator animator;
+    NavMeshAgent agent;
     public bool isDead = false;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
     }
 
     private void Start()
@@ -44,6 +47,7 @@ public class Enemy : MonoBehaviour
         isDead = true;
 
         animator.SetTrigger("enemyDeath");
+        agent.ResetPath();
 
         // 5 percent chance to drop health on death
         if (UnityEngine.Random.value < 0.5f)

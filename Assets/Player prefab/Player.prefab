@@ -107,11 +107,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3899f9c06ede77c4ab43879afeeea5d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::movement
+  inAir: 0
   knockbackDecay: 5
   cameraTransform: {fileID: 0}
   isDodging: 0
   moveAction: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   jumpAction: {fileID: -2099379676528639254, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  attackPoint: {fileID: 2469671043592034532}
+  attackRadius: 2
+  damage: 5
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!143 &1671452862895848301
 CharacterController:
   m_ObjectHideFlags: 0
