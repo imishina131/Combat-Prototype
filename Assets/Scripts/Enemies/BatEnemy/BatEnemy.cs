@@ -7,7 +7,7 @@ public class BatEnemy : MonoBehaviour
 {
     //public WaypointHolder waypointHolder;
     public Transform player;
-    public float speed = 20f;
+    public float speed = 10f;
     private float rotationSpeed = 7.5f;
     private float circleDuration = 5f;
     private float attackDuration = 10f;
@@ -15,7 +15,7 @@ public class BatEnemy : MonoBehaviour
     private float waypointDistanceThreshold = 2f;
 
     private Transform currentWaypointTarget;
-    public Transform[] waypoints;
+    public GameObject[] waypoints;
 
     public GameObject projectile;
     public Transform startLocation;
@@ -29,6 +29,8 @@ public class BatEnemy : MonoBehaviour
         {
             StartCoroutine(StateMachine());
         }
+
+        waypoints = GameObject.FindGameObjectsWithTag("waypoint");
 
         StartCoroutine(StateMachine());
     }
@@ -53,7 +55,7 @@ public class BatEnemy : MonoBehaviour
     {
         if (waypoints != null && waypoints.Length > 0)
         {
-            currentWaypointTarget = waypoints[Random.Range(0, waypoints.Length)];
+            currentWaypointTarget = waypoints[Random.Range(0, waypoints.Length)].transform;
 
             Debug.Log("picked point");
         }

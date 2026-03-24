@@ -156,6 +156,7 @@ GameObject:
   - component: {fileID: 4736320280896054672}
   - component: {fileID: 4501404945406565340}
   - component: {fileID: 5737864267674743421}
+  - component: {fileID: 3996270530838083901}
   m_Layer: 8
   m_Name: FlyingAI
   m_TagString: Untagged
@@ -193,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BatEnemy
   player: {fileID: 0}
-  speed: 20
+  speed: 10
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -224,3 +225,26 @@ MonoBehaviour:
   currentHealth: 0
   healthPickup: {fileID: 6888358477888581324, guid: db24b813fbd1b7145bef6aa6938fcef4, type: 3}
   isDead: 0
+--- !u!136 &3996270530838083901
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8406238421361997300}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
