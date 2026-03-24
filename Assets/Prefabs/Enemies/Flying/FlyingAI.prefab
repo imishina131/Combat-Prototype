@@ -155,7 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4736320280896054672}
   - component: {fileID: 4501404945406565340}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FlyingAI
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -61,6 +61,7 @@ public class ThirdPersonCamera : MonoBehaviour
         {
             Vector3 randomOffset = Random.insideUnitSphere * shakeMagnitude;
             transform.position = desiredPosition + randomOffset;
+            shakeTimer -= Time.deltaTime;
         }
         else
         {

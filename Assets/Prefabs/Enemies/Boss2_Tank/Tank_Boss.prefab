@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tank_Boss
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       propertyPath: m_Controller
       value: 
@@ -161,9 +165,9 @@ MonoBehaviour:
   attackCooldown: 3
   damage: 10
   attackRadius: 0.5
-  playerLayer:
+  Player:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   stunDuration: 2
   projectile: {fileID: 5078792501290197030, guid: fab4e72e9f039fe4e8e184f9cd9343d5, type: 3}
   startLocation: {fileID: 3015624967903037376}

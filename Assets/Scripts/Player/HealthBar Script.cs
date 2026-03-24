@@ -15,11 +15,14 @@ public class HealthBarScript : MonoBehaviour
     // ADDED BY CAMERON
     private ThirdPersonCamera cam;
 
+    movement movement;
+
     void Start()
     {
         _currentHP = _MaxHP;
         _HpText.text = " Health: " + _currentHP;
         cam = Camera.main.GetComponent<ThirdPersonCamera>();
+        movement = GetComponent<movement>();
     }
     private void Update()
     {
@@ -62,7 +65,7 @@ public class HealthBarScript : MonoBehaviour
     // ADDED BY CAMERON
     public void TakeDamage(float damage)
     {
-        if(movement.isDodging == false)
+        if (!movement.isDodging)
         {
             UpdatingHP(-damage);
             Debug.Log("Player took damage");

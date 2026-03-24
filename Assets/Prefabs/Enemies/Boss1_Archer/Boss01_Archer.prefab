@@ -1119,9 +1119,9 @@ MonoBehaviour:
   attackCooldown: 1.5
   damage: 10
   attackRadius: 2
-  playerLayer:
+  Player:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   stunDuration: 2
   arrowPrefab: {fileID: 4436049261849682944, guid: 16dfead814f0b8e4faef4eb3c2cddf8e, type: 3}
   firePoint: {fileID: 8227768978677490239}
