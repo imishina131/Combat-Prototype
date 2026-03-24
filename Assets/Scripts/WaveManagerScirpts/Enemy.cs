@@ -59,6 +59,6 @@ public class Enemy : MonoBehaviour
         }
 
         OnEnemyKilled?.Invoke(this);
-        Destroy(gameObject, 5f);
+        Destroy(gameObject, 2f);
     }
 }
