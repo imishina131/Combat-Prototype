@@ -232,6 +232,114 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 178564990}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &200616780 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4463074794504268183, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+  m_PrefabInstance: {fileID: 330573367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!1001 &330573367
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8314882671343788319, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8392368839344316512, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+      propertyPath: m_Name
+      value: Canvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -579,6 +687,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &745236021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2639407823964515051, guid: 36ac4eb6d1a42434097960077bfd31e5, type: 3}
+  m_PrefabInstance: {fileID: 330573367}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,13 +1365,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8405445810273305246, guid: 8712007c674c634499c4d239ea179d32, type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'mixamorig:Hips'\n\tTransform 'mixamorig:LeftFoot'\n\tTransform
-        'mixamorig:RightHandRing2'\n\tTransform 'mixamorig:Spine1'\n\tTransform 'mixamorig:LeftToeBase'\n\tTransform
-        'mixamorig:RightArm'\n\tTransform 'mixamorig:LeftLeg'\n\tTransform 'mixamorig:LeftShoulder'\n\tTransform
-        'mixamorig:RightHandRing1'\n\tTransform 'mixamorig:RightHandIndex3'\n\tand
-        more ...\n\tFrom animation clip 'mixamo.com'"
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8405445810273305246, guid: 8712007c674c634499c4d239ea179d32, type: 3}
       propertyPath: m_ApplyRootMotion
@@ -1261,8 +1374,62 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2958258119990264414, guid: 8712007c674c634499c4d239ea179d32, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1773615964758299901}
   m_SourcePrefab: {fileID: 100100000, guid: 8712007c674c634499c4d239ea179d32, type: 3}
+--- !u!1 &1773615964758299900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2958258119990264414, guid: 8712007c674c634499c4d239ea179d32, type: 3}
+  m_PrefabInstance: {fileID: 1773615964758299899}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1773615964758299901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1773615964758299900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ac4dfced14d31a4cb70d457487da586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBarScript
+  _MaxHP: 100
+  _currentHP: 0
+  _healthBarFill: {fileID: 200616780}
+  _HpText: {fileID: 745236021}
+  _colored:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1274,3 +1441,4 @@ SceneRoots:
   - {fileID: 1848458573}
   - {fileID: 1773615964758299899}
   - {fileID: 330585546}
+  - {fileID: 330573367}
