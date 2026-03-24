@@ -16,11 +16,17 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     NavMeshAgent agent;
     public bool isDead = false;
+    float knockbackStrength = 20;
+    private GameObject player;
+
+    Rigidbody rb;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Start()
@@ -30,6 +36,20 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (agent != null)
+        {
+            agent.enabled = false;
+        }
+
+        if (rb != null)
+        {
+            //rb.isKinematic = false;
+            //rb.useGravity = true;
+            Vector3 knockbackDirection = (gameObject.transform.position - player.transform.position).normalized;
+            rb.AddForce(knockbackDirection * knockbackStrength, ForceMode.Impulse); 
+            Invoke("ResetEnemyState", 1.5f); 
+        }
+
         if (isDead) return;
 
         currentHealth -= damage;
@@ -39,6 +59,22 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0)
         {
             Kill();
+        }
+    }
+
+    void ResetEnemyState()
+    {
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector3.zero; 
+            //rb.isKinematic = true;
+            //rb.useGravity = false;
+        }
+
+        if (agent != null)
+        {
+            agent.enabled = true;
+            agent.Warp(transform.position);
         }
     }
 

@@ -1906,6 +1906,10 @@ PrefabInstance:
       propertyPath: _healthBarFill
       value: 
       objectReference: {fileID: 200616780}
+    - target: {fileID: 7281721734382302227, guid: 8712007c674c634499c4d239ea179d32, type: 3}
+      propertyPath: knockbackStrength
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

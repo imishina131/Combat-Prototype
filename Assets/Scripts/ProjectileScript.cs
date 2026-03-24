@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class ProjectileScript : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class ProjectileScript : MonoBehaviour
         initialPos = gameObject.transform;
 
         direction = (playerLocation.position - initialPos.position).normalized;
+
+        StartCoroutine(Destroy());
     }
 
     // Update is called once per frame
@@ -29,5 +32,11 @@ public class ProjectileScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    IEnumerator Destroy()
+    {
+        yield return new WaitForSeconds(4);
+        Destroy(gameObject);
     }
 }

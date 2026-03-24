@@ -7,6 +7,7 @@ TagManager:
   - healthPickup
   - Ground
   - waypoint
+  - FlyingEnemy
   layers:
   - Default
   - TransparentFX

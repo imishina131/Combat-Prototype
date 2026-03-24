@@ -6,6 +6,8 @@ using UnityEngine.AI;
 public class BatEnemy : MonoBehaviour
 {
     //public WaypointHolder waypointHolder;
+
+
     public Transform player;
     public float speed = 10f;
     private float rotationSpeed = 7.5f;
