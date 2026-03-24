@@ -155,6 +155,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4736320280896054672}
   - component: {fileID: 4501404945406565340}
+  - component: {fileID: 5737864267674743421}
   m_Layer: 8
   m_Name: FlyingAI
   m_TagString: Untagged
@@ -207,3 +208,19 @@ MonoBehaviour:
   - {fileID: 0}
   projectile: {fileID: 5078792501290197030, guid: fab4e72e9f039fe4e8e184f9cd9343d5, type: 3}
   startLocation: {fileID: 7594184907085060474}
+--- !u!114 &5737864267674743421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8406238421361997300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c59bbc57ecaf146a48e32eded18ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  maxHealth: 10
+  currentHealth: 0
+  healthPickup: {fileID: 6888358477888581324, guid: db24b813fbd1b7145bef6aa6938fcef4, type: 3}
+  isDead: 0

@@ -70,6 +70,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4293378361605166554}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7081687260802943404}
   m_SourcePrefab: {fileID: 100100000, guid: 3e92e4a23402ca043922c0bee576dcf6, type: 3}
 --- !u!1 &176318152685876462 stripped
 GameObject:
@@ -118,3 +121,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   stunDuration: 2
+--- !u!114 &7081687260802943404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176318152685876462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56c59bbc57ecaf146a48e32eded18ff5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  maxHealth: 10
+  currentHealth: 0
+  healthPickup: {fileID: 6888358477888581324, guid: db24b813fbd1b7145bef6aa6938fcef4, type: 3}
+  isDead: 0

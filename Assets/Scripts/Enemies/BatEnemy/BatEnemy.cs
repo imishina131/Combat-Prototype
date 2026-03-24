@@ -25,7 +25,6 @@ public class BatEnemy : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         if (waypoints == null || waypoints.Length == 0)
         {
             StartCoroutine(StateMachine());

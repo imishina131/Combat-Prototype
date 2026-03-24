@@ -1286,7 +1286,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::WaveManager
   enemyTypes:
   - enemyName: Grunt_Basic
-    prefab: {fileID: 6645052608348363982, guid: 7ef3d26a720689744a9171c9c059b2f1, type: 3}
+    prefab: {fileID: 176318152685876462, guid: a4b7c6761b9398249aa1cc356db328af, type: 3}
     pointCost: 3
     weight: 30
   - enemyName: Grunt_Fast
@@ -1298,11 +1298,11 @@ MonoBehaviour:
     pointCost: 5
     weight: 15
   - enemyName: Grunt_Flying
-    prefab: {fileID: 6645052608348363982, guid: 7ef3d26a720689744a9171c9c059b2f1, type: 3}
+    prefab: {fileID: 8406238421361997300, guid: 6674f622e276d2249a39398b10774723, type: 3}
     pointCost: 5
     weight: 20
   - enemyName: Boss_Tank
-    prefab: {fileID: 6645052608348363982, guid: 7ef3d26a720689744a9171c9c059b2f1, type: 3}
+    prefab: {fileID: 1049061642838827059, guid: 1cd72c6c41f06ae4ba36db3d68c5f229, type: 3}
     pointCost: 10
     weight: 10
   - enemyName: Boss_Archer
