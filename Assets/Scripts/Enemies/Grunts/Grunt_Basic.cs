@@ -16,6 +16,5 @@ public class Grunt_Basic : EnemyBehavior
     {
         base.Attack();
         animator.SetTrigger("hookPunch");
-        //reference to player health (take away damage)
     }
 }

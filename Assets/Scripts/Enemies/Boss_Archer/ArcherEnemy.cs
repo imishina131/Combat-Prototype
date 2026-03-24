@@ -60,7 +60,6 @@ public class ArcherEnemy : EnemyBehavior
             Collider enemyCollider = GetComponent<Collider>();
 
             Physics.IgnoreCollision(arrowCollider, enemyCollider);
-            Debug.Log("Arrow fired");
         }
     }
 
