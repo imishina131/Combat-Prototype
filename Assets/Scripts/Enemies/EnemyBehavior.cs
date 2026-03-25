@@ -109,7 +109,7 @@ public class EnemyBehavior : MonoBehaviour
     {
         Debug.Log("tries attack");
         // if enough time has passed attack
-        if (Time.deltaTime >= lastAttackTime + attackCooldown);
+        if (Time.time >= lastAttackTime + attackCooldown)
         {
 
             Attack();
