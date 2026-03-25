@@ -9,7 +9,7 @@ public class Grunt_Basic : EnemyBehavior
     {
         base.Awake();
 
-        agent.speed = 4f;
+        agent.speed = 2f;
         attackRange = 1.8f;
         attackCooldown = 3f;
 

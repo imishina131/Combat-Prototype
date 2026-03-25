@@ -11,7 +11,7 @@ public class Grunt_Fast : EnemyBehavior
         base.Awake();
 
         // Sets custom enemy speed, range, and attackCooldown
-        agent.speed = 6f;
+        agent.speed = 2.5f;
         attackRange = 1.2f;
         attackCooldown = 2.7f;
     }

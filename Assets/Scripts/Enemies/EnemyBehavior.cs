@@ -107,9 +107,11 @@ public class EnemyBehavior : MonoBehaviour
 
     protected virtual void TryAttack()//checks if attack should be done
     {
+        Debug.Log("tries attack");
         // if enough time has passed attack
-        if (Time.deltaTime >= lastAttackTime + attackCooldown)
+        if (Time.deltaTime >= lastAttackTime + attackCooldown);
         {
+
             Attack();
             lastAttackTime = Time.time;
         }
@@ -117,6 +119,7 @@ public class EnemyBehavior : MonoBehaviour
 
     public virtual void Attack()// attacks player
     {
+        Debug.Log("attacks");
         // creates a hitbox infront of the enemy and anything in the player layer gets grabbed and calls the take damage method
         Vector3 attackPoint = transform.position + transform.forward * 1.5f;
 
