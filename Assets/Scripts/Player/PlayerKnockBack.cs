@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class PlayerKnockBack : MonoBehaviour
 {
+    //Done By Isaiah Ragland
+
     public float KnockBackTime = 0.2f;
     public float hitDirectionForce = 10f;
     public float constForce = 5f;

@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
+    //Done By Isaiah Ragland
+
     private float _playerScore;
     [SerializeField] private TextMeshProUGUI _ScoreText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class HealthBarScript : MonoBehaviour
 {
+    //Done By Isaiah Ragland
+
     public float _MaxHP = 100;
     public float _currentHP;
     [SerializeField] private Image _healthBarFill;

@@ -7,6 +7,10 @@ using System.Collections;
 
 public class movement : MonoBehaviour
 {
+
+    //Done By Isaiah Ragland
+
+
     HealthBarScript healthBarScript;
     private float playerSpeed = 5.0f;
     private float jumpHeight = 1.5f;

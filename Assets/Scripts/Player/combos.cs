@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class combos : MonoBehaviour
 {
+    ////Done By Isaiah Ragland
+    ///
     // ADDED BY CAMERON
     // PLAYER ATTACKS HERE
     public Transform attackPoint;
