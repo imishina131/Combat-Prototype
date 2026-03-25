@@ -4,6 +4,7 @@
 using UnityEngine;
 using System;
 using UnityEngine.AI;
+using TMPro;
 
 // this represents an enemy in the world
 public class Enemy : MonoBehaviour
@@ -25,6 +26,10 @@ public class Enemy : MonoBehaviour
 
     Rigidbody rb;
 
+    public static float _playerScore = 0f;
+    GameObject textGameObject;
+    private TextMeshProUGUI scoreText;
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -36,6 +41,11 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+
+        textGameObject = GameObject.Find("Score:");
+        scoreText = textGameObject.GetComponent<TextMeshProUGUI>();
+        scoreText.text = " Score: " + _playerScore;
+
     }
 
     public void TakeDamage(int damage)// adds a knockback while deactivating the ai agent and takes away health
@@ -84,6 +94,10 @@ public class Enemy : MonoBehaviour
     public void Kill()//triggers death animation and stops the path
     {
         isDead = true;
+
+        _playerScore += 1;
+        _playerScore = Mathf.Clamp(_playerScore, 0f, 9999f);
+        scoreText.text = " Score: " + _playerScore;
 
         if (animator != null)
         {

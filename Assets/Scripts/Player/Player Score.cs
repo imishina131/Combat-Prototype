@@ -8,12 +8,11 @@ using UnityEngine.UI;
 public class PlayerScore : MonoBehaviour
 {
 
-    private float _playerScore;
+    private float _playerScore = 0f;
     [SerializeField] private TextMeshProUGUI _ScoreText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _playerScore = 0;
         _ScoreText.text = " Score: " + _playerScore;
     }
 

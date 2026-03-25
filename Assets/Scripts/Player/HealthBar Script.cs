@@ -36,6 +36,7 @@ public class HealthBarScript : MonoBehaviour
         if ( _currentHP <= 0)
         {
             Debug.Log("You are Dead");
+            Enemy._playerScore = 0;
             SceneManager.LoadScene("MainScene");
         }
 
