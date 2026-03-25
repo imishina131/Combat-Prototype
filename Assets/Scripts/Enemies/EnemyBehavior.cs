@@ -1,3 +1,7 @@
+// Combat Prototype
+// Irina Mishina & Cameron Lee Czysz-Mille
+// 2026-03-24
+
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -101,7 +105,7 @@ public class EnemyBehavior : MonoBehaviour
     }
     #endregion EventSubscription
 
-    protected virtual void TryAttack()
+    protected virtual void TryAttack()//checks if attack should be done
     {
         // if enough time has passed attack
         if (Time.deltaTime >= lastAttackTime + attackCooldown)
@@ -111,7 +115,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    public virtual void Attack()
+    public virtual void Attack()// attacks player
     {
         // creates a hitbox infront of the enemy and anything in the player layer gets grabbed and calls the take damage method
         Vector3 attackPoint = transform.position + transform.forward * 1.5f;
@@ -127,7 +131,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    void HandleEnemyHit(Enemy hitEnemy)
+    void HandleEnemyHit(Enemy hitEnemy)//checks whether it should stun
     {
         if (hitEnemy != enemy) return;
 
@@ -137,7 +141,7 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
-    void Stun()
+    void Stun()//stuns enemy
     {
         isStunned = true;
         if (animator != null)

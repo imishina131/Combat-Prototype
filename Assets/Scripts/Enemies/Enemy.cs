@@ -1,3 +1,6 @@
+// Combat Prototype
+// Irina Mishina & Cameron Lee Czysz-Mille
+// 2026-03-24
 using UnityEngine;
 using System;
 using UnityEngine.AI;
@@ -35,7 +38,7 @@ public class Enemy : MonoBehaviour
         currentHealth = maxHealth;
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(int damage)// adds a knockback while deactivating the ai agent and takes away health
     {
         if (agent != null)
         {
@@ -44,8 +47,6 @@ public class Enemy : MonoBehaviour
 
         if (rb != null)
         {
-            //rb.isKinematic = false;
-            //rb.useGravity = true;
             Vector3 knockbackDirection = (gameObject.transform.position - player.transform.position).normalized;
             rb.AddForce(knockbackDirection * knockbackStrength, ForceMode.Impulse); 
             Invoke("ResetEnemyState", 1.5f); 
@@ -64,15 +65,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void ResetEnemyState()
+    void ResetEnemyState()//resets the ai agent and sets new location
     {
         if (isDead) return;
 
         if (rb != null)
         {
             rb.linearVelocity = Vector3.zero; 
-            //rb.isKinematic = true;
-            //rb.useGravity = false;
         }
 
         if (agent != null)
@@ -82,7 +81,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    public void Kill()
+    public void Kill()//triggers death animation and stops the path
     {
         isDead = true;
 

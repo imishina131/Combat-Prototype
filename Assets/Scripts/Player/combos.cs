@@ -1,3 +1,6 @@
+// Combat Prototype
+// Isaiah Ragland
+// 2026-03-24
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

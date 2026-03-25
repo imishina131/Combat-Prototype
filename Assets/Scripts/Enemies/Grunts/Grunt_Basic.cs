@@ -1,3 +1,6 @@
+// Combat Prototype
+// Irina Mishina
+// 2026-03-24
 using UnityEngine;
 
 public class Grunt_Basic : EnemyBehavior
@@ -12,7 +15,7 @@ public class Grunt_Basic : EnemyBehavior
 
     }
 
-    public override void Attack()
+    public override void Attack()//attacks
     {
         base.Attack();
         animator.SetTrigger("hookPunch");

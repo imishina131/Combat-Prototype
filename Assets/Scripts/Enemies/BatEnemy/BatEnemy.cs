@@ -1,3 +1,6 @@
+// Combat Prototype
+// Irina Mishina
+// 2026-03-24
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -27,12 +30,7 @@ public class BatEnemy : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (waypoints == null || waypoints.Length == 0)
-        {
-            StartCoroutine(StateMachine());
-        }
-
-        waypoints = GameObject.FindGameObjectsWithTag("waypoint");
+        waypoints = GameObject.FindGameObjectsWithTag("waypoint");//finds all waypoints
 
         StartCoroutine(StateMachine());
     }
@@ -43,7 +41,7 @@ public class BatEnemy : MonoBehaviour
 
     }
 
-    private IEnumerator StateMachine()
+    private IEnumerator StateMachine()//calls the two states: attack and patrol
     {
         while (true)
         {
@@ -53,18 +51,17 @@ public class BatEnemy : MonoBehaviour
     }
 
 
-    private void PickRandomPoint()
+    private void PickRandomPoint()//picks random point based on the array of waypoints
     {
         if (waypoints != null && waypoints.Length > 0)
         {
             currentWaypointTarget = waypoints[Random.Range(0, waypoints.Length)].transform;
 
-            Debug.Log("picked point");
         }
         MoveTowardsTarget(currentWaypointTarget.position);
     }
 
-    private bool ReachWayPoint()
+    private bool ReachWayPoint()//checks if the enemy reached the target point
     {
         if (!currentWaypointTarget)
         {
@@ -74,7 +71,7 @@ public class BatEnemy : MonoBehaviour
         return Vector3.Distance(transform.position, currentWaypointTarget.position) < waypointDistanceThreshold;
     }
 
-    private void MoveTowardsTarget(Vector3 targetPos)
+    private void MoveTowardsTarget(Vector3 targetPos)//moves toward designated target
     {
         Vector3 dir = targetPos - transform.position;
 
@@ -83,10 +80,9 @@ public class BatEnemy : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
-        Debug.Log("moving");
     }
 
-    private IEnumerator Patrol(float duration)
+    private IEnumerator Patrol(float duration)// controls patroling options if it finished
     {
         if(!isAttacking)
         {
@@ -112,7 +108,7 @@ public class BatEnemy : MonoBehaviour
         
     }
 
-    private IEnumerator FireProjectile(float duration)
+    private IEnumerator FireProjectile(float duration)//fires a projectile (instantiates)
     {
         isAttacking = true;
         Instantiate(projectile, startLocation.position, Quaternion.identity);

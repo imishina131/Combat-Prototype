@@ -1,3 +1,6 @@
+// Combat Prototype
+// Irina Mishina & Cameron Lee Czysz-Mille & Isaiah Ragland
+// 2026-03-24
 //using DG.Tweening;
 using TMPro;
 using UnityEngine;
@@ -6,7 +9,6 @@ using UnityEngine.UI;
 
 public class HealthBarScript : MonoBehaviour
 {
-    //Done By Isaiah Ragland
 
     public float _MaxHP = 100;
     public float _currentHP;
@@ -27,7 +29,6 @@ public class HealthBarScript : MonoBehaviour
         character = GetComponent<CharacterController>();
         _currentHP = _MaxHP;
         _HpText.text = " Health: " + _currentHP;
-        //cam = Camera.main.GetComponent<ThirdPersonCamera>();
         movement = GetComponent<movement>();
     }
     private void Update()
@@ -66,9 +67,6 @@ public class HealthBarScript : MonoBehaviour
     {
         float targetFillamount = _currentHP / _MaxHP;
         _healthBarFill.fillAmount = targetFillamount;
-        //animation for healthBar
-        //_healthBarFill.DOFillAmount(targetFillamount, _fillSpeed);
-        //gradient
         _healthBarFill.color= _colored.Evaluate(targetFillamount);
     }
 
@@ -77,6 +75,7 @@ public class HealthBarScript : MonoBehaviour
     {
         if (!movement.isDodging)
         {
+            //knockback and dodge by Irina
             Vector3 knockbackDirection = (gameObject.transform.position - source.transform.position).normalized;
             impact += knockbackDirection * knockbackStrength / mass;
             UpdatingHP(-damage);

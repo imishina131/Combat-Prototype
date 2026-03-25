@@ -1,10 +1,12 @@
+// Combat Prototype
+// Isaiah Ragland
+// 2026-03-24
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerScore : MonoBehaviour
 {
-    //Done By Isaiah Ragland
 
     private float _playerScore;
     [SerializeField] private TextMeshProUGUI _ScoreText;

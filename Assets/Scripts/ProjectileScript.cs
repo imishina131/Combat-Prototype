@@ -1,3 +1,6 @@
+// Combat Prototype
+// Irina Mishina
+// 2026-03-24
 using UnityEngine;
 using System.Collections;
 
@@ -21,12 +24,12 @@ public class ProjectileScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void Update()//moves the projectile continuously
     {
         transform.position += new Vector3(direction.x, direction.y + 0.3f, direction.z) * speed * Time.deltaTime;
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)//destroy if the projectile hits the ground or the player
     {
         if(collision.collider.CompareTag("Player") || collision.collider.CompareTag("Ground"))
         {
@@ -34,7 +37,7 @@ public class ProjectileScript : MonoBehaviour
         }
     }
 
-    IEnumerator Destroy()
+    IEnumerator Destroy()// destroys prefab after 4 seconds
     {
         yield return new WaitForSeconds(4);
         Destroy(gameObject);

@@ -1,3 +1,6 @@
+// Combat Prototype
+// Cameron Lee Czysz-Mille
+// 2026-03-24
 using UnityEngine;
 
 [System.Serializable]

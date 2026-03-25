@@ -1,3 +1,6 @@
+// Combat Prototype
+// Isaiah Ragland
+// 2026-03-24
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -98,18 +101,6 @@ public class movement : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(move);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
         }
-
-        /* commented out by cameron
-        // Read input
-        Vector2 input = moveAction.action.ReadValue<Vector2>();
-        Vector3 move = new Vector3(input.x, 0, input.y);
-        move = Vector3.ClampMagnitude(move, 1f);
-
-        if (move != Vector3.zero)
-        {
-            transform.forward = move;
-        }
-        */
 
         if (move == Vector3.zero)
         {

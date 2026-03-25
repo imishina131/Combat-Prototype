@@ -1,3 +1,6 @@
+// Combat Prototype
+// Irina Mishina
+// 2026-03-24
 using UnityEngine;
 
 public class TankEnemy : EnemyBehavior
@@ -15,7 +18,7 @@ public class TankEnemy : EnemyBehavior
         attackCooldown = 4f;
     }
 
-    public override void Attack()
+    public override void Attack()//chooses between 2 attacks : projectile or close range
     {
         base.Attack();
 
@@ -31,9 +34,8 @@ public class TankEnemy : EnemyBehavior
         }
     }
 
-    void ThrowProjectile()
+    void ThrowProjectile()//instantiates projectile
     {
         Instantiate(projectile, startLocation.position, Quaternion.identity);
-
     }
 }
